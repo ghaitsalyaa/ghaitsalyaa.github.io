@@ -1,0 +1,400 @@
+/* ==========================================================================
+   Kedai Pinguin - Vintage Floral, Maroon & Warm Brown Theme
+   ========================================================================== */
+
+:root {
+  /* Palet Warna Utama */
+  --bg-cream: #fdf8f0;             /* Krem lembut untuk latar belakang */
+  --card-bg: #fffcf7;              /* Krem terang untuk kad & bekas */
+  --primary-maroon: #6b1d2f;        /* Maroon klasik */
+  --dark-maroon: #4a121e;           /* Maroon pekat untuk penegasan */
+  --brown-dark: #3d261d;            /* Coklat tua untuk teks & border */
+  --brown-light: #a67c52;           /* Coklat muda untuk elemen hiasan */
+  --brown-soft: #d9c5b2;            /* Coklat muda lembut untuk garisan border */
+  
+  /* Font Vintage */
+  --font-serif: "Georgia", "Times New Roman", serif;
+  --font-sans: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-cream);
+  /* Latar belakang ornamen bunga vintage menggunakan corak SVG yang halus */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><g fill="%23a67c52" fill-opacity="0.08"><path d="M40 25c-2-5-8-5-10 0s3 8 10 12c7-4 12-7 10-12s-8-5-10 0z"/><path d="M40 25c-5-2-5-8 0-10s8 3 12 10c-4 7-7 12-12 10s-5-8 0-10z"/><path d="M40 25c2 5 8 5 10 0s-3-8-10-12c-7 4-12 7-10 12s8 5 10 0z"/><path d="M40 25c5 2 5 8 0 10s-8-3-12-10c4-7 7-12 12-10s5 8 0 10z"/><circle cx="40" cy="25" r="3"/><path d="M0 65c-2-5-8-5-10 0s3 8 10 12c7-4 12-7 10-12s-8-5-10 0z"/><circle cx="0" cy="65" r="3"/><path d="M80 65c-2-5-8-5-10 0s3 8 10 12c7-4 12-7 10-12s-8-5-10 0z"/><circle cx="80" cy="65" r="3"/></g></svg>');
+  background-repeat: repeat;
+  color: var(--brown-dark);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  padding: 25px 12px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 35px 20px;
+  background-color: var(--card-bg);
+  border: 2px solid var(--brown-light);
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 15px rgba(61, 38, 29, 0.08);
+  position: relative;
+}
+
+/* Hiasan Bunga pada Header */
+header::before, header::after {
+  content: "🌸 ❦ 🌸";
+  font-size: 1.1rem;
+  color: var(--brown-light);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.welcome {
+  font-size: 0.85rem;
+  letter-spacing: 2.5px;
+  color: var(--primary-maroon);
+  font-weight: bold;
+}
+
+#site-name a {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  color: var(--primary-maroon);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#tagline {
+  font-style: italic;
+  color: var(--brown-light);
+  margin-bottom: 12px;
+  font-family: var(--font-serif);
+}
+
+.header-description {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  color: var(--brown-dark);
+}
+
+.status-badge {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  background-color: #f3e9e1;
+  color: var(--primary-maroon);
+  border: 1px solid var(--primary-maroon);
+}
+
+.status-badge.closed {
+  background-color: #fbebee;
+  color: var(--dark-maroon);
+  border-color: var(--dark-maroon);
+}
+
+/* NAVIGATION */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--brown-dark);
+  padding: 10px 22px;
+  border: 1.5px solid var(--brown-light);
+  border-radius: 25px;
+  background-color: var(--card-bg);
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+nav a:hover, nav a.current {
+  background-color: var(--primary-maroon);
+  color: #ffffff;
+  border-color: var(--primary-maroon);
+}
+
+/* MAIN CONTENT */
+main {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.small-title {
+  color: var(--brown-light);
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.intro h2 {
+  font-family: var(--font-serif);
+  color: var(--primary-maroon);
+  font-size: 2rem;
+  margin: 5px 0;
+}
+
+/* MENU GRID */
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-bottom: 45px;
+}
+
+.dish {
+  background-color: var(--card-bg);
+  border: 1px solid var(--brown-soft);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(61, 38, 29, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dish:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(107, 29, 47, 0.12);
+  border-color: var(--brown-light);
+}
+
+.dish-image img {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--brown-soft);
+}
+
+.dish-content {
+  padding: 18px;
+}
+
+.dish-tag {
+  font-size: 0.75rem;
+  color: var(--primary-maroon);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.dish h2 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--primary-maroon);
+  margin: 6px 0;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.15rem;
+  color: var(--brown-dark);
+  margin-top: 12px;
+}
+
+/* FEATURES SECTION */
+.why-us {
+  background-color: var(--card-bg);
+  padding: 35px 25px;
+  border-radius: 12px;
+  border: 1px solid var(--brown-soft);
+  text-align: center;
+  margin-bottom: 45px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.why-us h2 {
+  font-family: var(--font-serif);
+  color: var(--primary-maroon);
+  margin-bottom: 22px;
+  font-size: 1.8rem;
+}
+
+.features {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature {
+  flex: 1;
+  min-width: 220px;
+  padding: 15px;
+}
+
+.feature-icon {
+  font-size: 2.4rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.feature h3 {
+  color: var(--brown-dark);
+  font-family: var(--font-serif);
+  margin-bottom: 5px;
+}
+
+/* TABLE SECTION */
+.price-section {
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.price-section h2 {
+  font-family: var(--font-serif);
+  color: var(--primary-maroon);
+  font-size: 1.8rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+th, td {
+  padding: 14px;
+  border: 1px solid var(--brown-soft);
+  text-align: left;
+}
+
+th {
+  background-color: var(--primary-maroon);
+  color: #ffffff;
+  font-family: var(--font-serif);
+  letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+  background-color: #fbf5ed;
+}
+
+/* CALL TO ACTION */
+.cta {
+  text-align: center;
+  padding: 35px 20px;
+  background-color: #f5ebe0;
+  border-radius: 12px;
+  border: 1.5px dashed var(--brown-light);
+  margin-bottom: 45px;
+}
+
+.cta h2 {
+  font-family: var(--font-serif);
+  color: var(--primary-maroon);
+  margin-bottom: 8px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 18px;
+  background-color: var(--primary-maroon);
+  color: #ffffff;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(107, 29, 47, 0.25);
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--dark-maroon);
+}
+
+/* FORM STYLES (book.html) */
+.booking-section {
+  background-color: var(--card-bg);
+  padding: 35px;
+  border-radius: 12px;
+  border: 1px solid var(--brown-soft);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: var(--brown-dark);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid var(--brown-soft);
+  border-radius: 6px;
+  background-color: #ffffff;
+  font-family: inherit;
+  color: var(--brown-dark);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-maroon);
+  box-shadow: 0 0 5px rgba(107, 29, 47, 0.2);
+}
+
+.radio-group label {
+  display: inline-block;
+  margin-right: 15px;
+  font-weight: normal;
+}
+
+.info-note {
+  color: var(--primary-maroon);
+  font-size: 0.88rem;
+  margin-top: 6px;
+}
+
+.message-box {
+  font-weight: bold;
+  color: var(--primary-maroon);
+  margin: 12px 0;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px 20px;
+  background-color: var(--primary-maroon);
+  color: #ffffff;
+  border-radius: 12px;
+  margin-top: 45px;
+  font-size: 0.9rem;
+  border: 1px solid var(--dark-maroon);
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
